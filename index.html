@@ -67,12 +67,6 @@
                 </a>
                 <a href="#">
                     <span class="material-symbols-sharp">
-                        currency_exchange
-                        </span>
-                    <h4>Exchange</h4>
-                </a>
-                <a href="#">
-                    <span class="material-symbols-sharp">
                         account_balance_wallet
                         </span>
                     <h4>Wallet</h4>
@@ -101,7 +95,7 @@
                         </span>
                     <h4>Help Center</h4>
                 </a>
-                <a href="#" id="popseed">
+                <a href="#">
                     <span class="material-symbols-sharp">
                         group
                         </span>
@@ -177,7 +171,7 @@
                     <div>
                         <details>
                             <h1>$0.00</h1>
-                            <h6 class="danger">+0.0%</h6>
+                            <h6 class="success">+0.0%</h6>
                         </details>
                         <p class="text-muted">Compared to $0.00 last month</p>
                     </div>
@@ -189,7 +183,7 @@
                     <div>
                         <details>
                             <h1>$0.00</h1>
-                            <h6 class="success">-0.0%</h6>
+                            <h6 class="danger">-0.0%</h6>
                         </details>
                         <p class="text-muted">Compared to $0.00 last month</p>
                     </div>
@@ -305,7 +299,7 @@
                     <button onclick="shuffle()">More<span class="material-symbols-sharp">chevron_right</span></button></button>
                 </div>
 
-                <div class="investment" id="div1">
+                <div onclick="display()" class="investment" id="div1">
                     <img src="./images/uniliver.png" alt="">
                     <h4>Unilever</h4>
                     <div class="date-time">
@@ -322,7 +316,7 @@
                     </div>
                 </div>
                 <!-- END OF INVESTMENT 1-->
-                <div class="investment" id="div2">
+                <div onclick="display()" class="investment" id="div2">
                     <img src="./images/tesla.png" alt="">
                     <h4>Tesla</h4>
                     <div class="date-time">
@@ -339,7 +333,7 @@
                     </div>
                 </div>
                 <!-- END OF INVESTMENT 2-->
-                <div class="investment" id="div3">
+                <div onclick="display()" class="investment" id="div3">
                     <img src="./images/monster.png" alt="">
                     <h4>Monster</h4>
                     <div class="date-time">
@@ -356,7 +350,7 @@
                     </div>
                 </div>
                 <!-- END OF INVESTMENT 3-->
-                <div class="investment" id="div4">
+                <div onclick="display()" class="investment" id="div4">
                     <img src="./images/apple.png" alt="">
                     <h4>Apple</h4>
                     <div class="date-time">
@@ -373,7 +367,7 @@
                     </div>
                 </div>
                 <!-- END OF INVESTMENT 4-->
-                <div class="investment" id="div5">
+                <div onclick="display()" class="investment" id="div5">
                     <img src="./images/mcdonalds.png" alt="">
                     <h4>McDonalds</h4>
                     <div class="date-time">
@@ -390,7 +384,7 @@
                     </div>
                 </div>
                 <!-- END OF INVESTMENT 5-->
-                <div class="investment" id="div6">
+                <div onclick="display()" class="investment" id="div6">
                     <img src="./images/microsoft.png" alt="">
                     <h4>Microsoft</h4>
                     <div class="date-time">
@@ -427,33 +421,12 @@
     </main>
     <!-- ***************END OF ASIDE********** -->
 
-             <div class="modal__container toclose" id="modal-container">
-                <div class="modal__content">
-                    <div class="modal__close close-modal" title="Close" onclick="easyclose()">
-                        <i class='bx bx-x'></i>
-                    </div>
-
-                    <img src="assets/img/star-trophy.png" alt="" class="modal__img">
-
-                    <h1 class="modal__title">$10,000 Bonus!</h1>
-                    <p class="modal__description">Account Created</p>
-
-                    <button class="modal__button modal__button-width">
-                        View your Seed Phrase
-                    </button>
-
-                    <button class="modal__button-link close-modal" id="cls" >
-                        Skip
-                    </button>
-                </div>
-            </div>
-
              <div class="modal__container toclose" id="modal-contain">
                 <div class="modal__content">
                     <div class="modal__close close-modal" title="Close" onclick="easycls()">
                         <i class='bx bx-x'></i>
                     </div>
-                    <h1 class="modal__title">No deposit!</h1>
+                    <h1 class="modal__title">Activate account!</h1>
                     <p class="modal__description">You can not perform a task till you deposit</p>
 
                     <button class="modal__button modal__button-width">
@@ -474,8 +447,6 @@ let storedUsername = localStorage.getItem("Name");
 
 document.getElementById("user").innerHTML = storedUsername + "'s " + "Overview";
 document.getElementById("dename").innerHTML = storedUsername;
- let popseed = document.getElementById("popseed");
-popseed.style.display = "none";
 }else{
 document.getElementById("user").innerHTML = "Overview";
 }
@@ -519,25 +490,34 @@ window.onload = shuffle;
 	button.addEventListener("click", close);	
 }
 
+const lockScroll = () => {
+  const scrollPosition = window.scrollY;
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${scrollPosition}px`;
+};
+
+const unlockScroll = () => {
+  document.body.style.position = '';
+  document.body.style.top = '';
+  window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+};
+
 function display(){
 		let popout = document.getElementById("modal-contain");
 		popout.classList.add("show-modal");
+		lockScroll();
 	function close(){
 		popout.classList.remove("show-modal");
+		unlockScroll();
 	}
 	 	var button = document.getElementById("clse");
 	button.addEventListener("click", close);	
 	};
 
-function easyclose(){
-	let popdown = document.getElementById("modal-contain");
-	let popdwn = document.getElementById("modal-container");
-	popdwn.classList.remove("show-modal");
-	popdown.classList.remove("show-modal");
-}	
 function easycls(){
 	let popdown = document.getElementById("modal-contain");	
 	popdown.classList.remove("show-modal");
+		unlockScroll();
 }	
 	</script>
 
