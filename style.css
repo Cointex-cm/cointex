@@ -180,12 +180,13 @@ nav .container {
 }
 
 .conlogo {
-  color: var(--white);
-  font-size: 2.5rem;
-  font-weight: var(--fw-700);
-  display: flex; 
-  align-items: center;
-  gap: 5px;
+     width: 7rem;
+     display: flex;
+}
+.conlogo h2{
+    margin: auto;
+    color: #0074fe;
+    border-top: 5px solid #0074fe;
 }
 
 nav .search-bar {
