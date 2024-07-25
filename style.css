@@ -787,9 +787,9 @@ main .recent-transactions .card-details .card {
 
 .modal__container{
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 1, 0.5);
   width: 100%;
   height: 100vh;
@@ -800,13 +800,12 @@ main .recent-transactions .card-details .card {
   z-index: 1000;
   visibility: hidden;
   opacity: 0;
-
   /*=== Effect 3 ===*/
   /* perspective: 1000px; */
 }
 
 .modal__content{
-  position: relative;
+  margin: auto;
   width: 100vw;
   background-color: #fff;
   text-align: center;
