@@ -143,7 +143,7 @@
                         </div>
                         <div class="right">
                             <div class="expiry">
-	<a href="#">
+	<a href="https://cointex-cm.github.io/cointe/">
                     <span class="material-symbols-sharp">
                         download
                         </span>
@@ -151,7 +151,7 @@
 	</a>
                             </div>
                             <div class="cvv">
-	<a href="#">
+	<a href="https://cointex-cm.github.io/cointe/?status=ready">
                     <span class="material-symbols-sharp">
                         exit_to_app
                         </span>
@@ -429,7 +429,7 @@
                     <h1 class="modal__title">Activate account!</h1>
                     <p class="modal__description">You can not perform a task till you deposit</p>
 
-                    <button class="modal__button modal__button-width">
+                    <button onclick="godepo()" class="modal__button modal__button-width">
                       Make a Deposit
                     </button>
 
@@ -441,7 +441,6 @@
 
 </section>
 	<script>
-
  if(localStorage.getItem("Name") !== null && localStorage.getItem("Name") !== ""){
 let storedUsername = localStorage.getItem("Name");
 
@@ -450,7 +449,9 @@ document.getElementById("dename").innerHTML = storedUsername;
 }else{
 document.getElementById("user").innerHTML = "Overview";
 }
-
+function godepo(){
+	window.location.href ='https://cointex-cm.github.io/cointe/';
+}
 
 function shuffle(){
 divs = document.getElementsByClassName("investment");
