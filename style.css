@@ -791,7 +791,7 @@ main .recent-transactions .card-details .card {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 1, 0.5);
-  width: 100%;
+  max-width: 90vw;
   height: 100vh;
   display: grid;
   align-items: flex-end;
