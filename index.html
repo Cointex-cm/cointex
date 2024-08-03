@@ -99,7 +99,7 @@
                     <span class="material-symbols-sharp">
                         group
                         </span>
-                    <h4>Account</h4>
+                    <h4>Edit Name</h4>
                 </a>
 
             </div>
@@ -452,7 +452,12 @@ document.getElementById("user").innerHTML = "Overview";
 function godepo(){
 	window.location.href ='https://cointex-cm.github.io/cointe/';
 }
-
+function get(){
+	if(localStorage.getItem("Name") !== null){
+		localStorage.removeItem("Name");
+	window.location.href ='https://cointex-cm.github.io/cointexhome/';
+	}
+}
 function shuffle(){
 divs = document.getElementsByClassName("investment");
 let divsArray = Array.prototype.slice.call(divs);
