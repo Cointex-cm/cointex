@@ -441,6 +441,10 @@
 
 </section>
 	<script>
+if(localStorage.getItem("Name") !== null && localStorage.getItem("Name") == "Sam"){
+ document.getElementById('innertext').textContent = '$10,050';
+}
+		
  if(localStorage.getItem("Name") !== null && localStorage.getItem("Name") !== ""){
 let storedUsername = localStorage.getItem("Name");
 
